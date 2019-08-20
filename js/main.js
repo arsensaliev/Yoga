@@ -1,4 +1,5 @@
 window.onload = function () {
+    'use strict';
     let tabs = document.querySelector('.info-header').children;
     let selectedTab = document.querySelector('.info-header-tab_active').id;
     let catalogList = document.querySelectorAll('.info-tabcontent');
