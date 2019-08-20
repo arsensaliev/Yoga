@@ -1,14 +1,14 @@
 window.onload = function () {
-    var tabs = document.querySelector('.info-header').children;
-    var selectedTab = document.querySelector('.info-header-tab_active').id;
-    var catalogList = document.querySelectorAll('.info-tabcontent');
+    let tabs = document.querySelector('.info-header').children;
+    let selectedTab = document.querySelector('.info-header-tab_active').id;
+    let catalogList = document.querySelectorAll('.info-tabcontent');
     renderActiveCatalog(selectedTab);
 
-    for (var j = 0; j < tabs.length; j++) {
+    for (let j = 0; j < tabs.length; j++) {
         tabs[j].addEventListener('click', function (e) {
             removeActive();
 
-            var btn = e.target;
+            let btn = e.target;
             selectedTab = btn.id;
             btn.classList.add('info-header-tab_active');
             renderActiveCatalog(selectedTab);
@@ -16,7 +16,7 @@ window.onload = function () {
     }
 
     function removeActive() {
-        for (var k = 0; k < tabs.length; k++) {
+        for (let k = 0; k < tabs.length; k++) {
             if (tabs[k].classList.contains('info-header-tab_active')) {
                 tabs[k].classList.remove('info-header-tab_active');
             }
@@ -24,7 +24,7 @@ window.onload = function () {
     }
 
     function renderActiveCatalog(selectedTab) {
-        for (var i = 0; i < catalogList.length; i++) {
+        for (let i = 0; i < catalogList.length; i++) {
             catalogList[i].classList.remove('hide');
             if (!catalogList[i].classList.contains(selectedTab)) {
                 catalogList[i].classList.add('hide');
@@ -89,13 +89,12 @@ window.onload = function () {
 
 
 
-    var more = document.querySelector('.more');
-    var overlay = document.querySelector('.overlay');
-    var close = document.querySelector('.popup-close');
-    var descBtn = document.querySelector('.description-btn');
+    let more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        close = document.querySelector('.popup-close'),
+        descBtn = document.querySelector('.description-btn');
 
     more.addEventListener('click', showModalWindow);
-
 
     close.addEventListener('click', hideModalWindow)
 
@@ -103,7 +102,7 @@ window.onload = function () {
 
     window.addEventListener('keydown', function (e) {
         if (overlay.classList.contains('overlay_active')) {
-            var esc = e.keyCode
+            let esc = e.keyCode
             if (esc == 27) {
                 hideModalWindow()
             }
