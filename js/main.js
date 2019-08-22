@@ -177,5 +177,4 @@ window.onload = function () {
             }
         });
     }
-
 }
