@@ -150,7 +150,7 @@ window.onload = function () {
             form[i].appendChild(statusMessage);
 
             let request = new XMLHttpRequest();
-            request.open('POST', 'server.php');
+            request.open('POST', 'php/server.php');
             request.setRequestHeader('Content-Type', 'application/json; charset=utf8');
 
             let formData = new FormData(form[i]);
